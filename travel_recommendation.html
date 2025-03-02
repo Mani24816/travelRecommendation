@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation</title>
+    <style>
+        /* Full-Screen Background Image */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+            background: url('imgs/background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a, nav input, nav button {
+            margin: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 1px solid white;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        nav input {
+            color: black;
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .page:not(.hidden) {
+            display: block;
+        }
+
+        /* Search Results */
+        .result img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('contact')">Contact Us</a>
+        <input type="text" id="searchInput" placeholder="Search destinations...">
+        <button onclick="search()">Search</button>
+        <button onclick="clearSearch()">Clear</button>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page">
+        <header>
+            <h1>Explore the World</h1>
+            <p>Discover amazing places with our recommendations.</p>
+            <div class="social-icons">
+                <a href="#"><img src="imgs/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="imgs/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="imgs/twitter.png" alt="Twitter"></a>
+            </div>
+        </header>
+        <div id="results"></div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about" class="page hidden">
+        <h2>About Our Company</h2>
+        <p>We help travelers find the best destinations.</p>
+        <h3>Meet Our Team</h3>
+        <ul>
+            <li>John Doe - CEO</li>
+            <li>Jane Smith - Travel Expert</li>
+        </ul>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact" class="page hidden">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script src="travel_recommendation.js"></script> <!-- Link to the JavaScript file -->
+
+</body>
+</html>
